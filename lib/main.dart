@@ -5,15 +5,20 @@ import 'package:evently/ui/screens/auth/forget_password_screen.dart';
 import 'package:evently/ui/screens/auth/login_screen/login_screen.dart';
 import 'package:evently/ui/screens/auth/register_screen/register_screen.dart';
 import 'package:evently/ui/screens/introduction_screen/introduction_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'core/app_theme/dark_theme.dart';
 import 'core/app_theme/light_theme.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(
     ChangeNotifierProvider(
