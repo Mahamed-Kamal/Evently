@@ -1,7 +1,6 @@
 import 'package:evently/core/app_theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 class LightTheme extends BaseTheme {
   @override
   Color get backgroundColor => Color(0xFFF2FEFF);
@@ -15,8 +14,17 @@ class LightTheme extends BaseTheme {
   @override
   ThemeData get themeData => ThemeData(
     primaryColor: primaryColor,
+    focusColor: const Color(0xFF7B7B7B),
     hintColor: primaryColor,
+    secondaryHeaderColor: primaryColor,
     scaffoldBackgroundColor: backgroundColor,
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: primaryColor,
+      shape: OutlineInputBorder(
+        borderRadius: const BorderRadius.all(Radius.circular(75),),
+        borderSide: BorderSide(width: 4, color: backgroundColor),
+      ),
+    ),
     appBarTheme: AppBarTheme(
       surfaceTintColor: backgroundColor,
       backgroundColor: backgroundColor,
@@ -53,6 +61,11 @@ class LightTheme extends BaseTheme {
         color: Color(0xFF7B7B7B),
         fontWeight: FontWeight.w500,
       ),
+      bodyLarge: GoogleFonts.inter(
+        fontSize: 20,
+        color: textColor,
+        fontWeight: FontWeight.bold,
+      ),
       bodySmall: GoogleFonts.inter(
         fontSize: 16,
         color: textColor,
@@ -63,26 +76,30 @@ class LightTheme extends BaseTheme {
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         backgroundColor: primaryColor,
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(color: Color(0xFF7B7B7B)),
+        borderSide: const BorderSide(color: Color(0xFF7B7B7B)),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(color: Color(0xFF7B7B7B)),
+        borderSide: const BorderSide(color: Color(0xFF7B7B7B)),
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(color: Color(0xFF7B7B7B)),
+        borderSide: const BorderSide(color: Colors.red),
       ),
-      prefixIconColor: Color(0xFF7B7B7B),
-      suffixIconColor: Color(0xFF7B7B7B),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: Colors.red),
+      ),
+      prefixIconColor: const Color(0xFF7B7B7B),
+      suffixIconColor: const Color(0xFF7B7B7B),
     ),
-    dividerColor: primaryColor,
-    dividerTheme: DividerThemeData(color: primaryColor),
+
+    
   );
 }

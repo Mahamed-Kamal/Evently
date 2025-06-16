@@ -15,8 +15,17 @@ class DarkTheme extends BaseTheme {
   @override
   ThemeData get themeData => ThemeData(
     primaryColor: primaryColor,
+    focusColor: const Color(0xFFF4EBDC),
     hintColor: primaryColor,
+    secondaryHeaderColor: backgroundColor,
     scaffoldBackgroundColor: backgroundColor,
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: backgroundColor,
+      shape: OutlineInputBorder(
+        borderRadius: const BorderRadius.all(Radius.circular(75),),
+        borderSide: BorderSide(width: 5, color: Colors.white),
+      ),
+    ),
     appBarTheme: AppBarTheme(
       surfaceTintColor: backgroundColor,
       backgroundColor: backgroundColor,
@@ -53,6 +62,11 @@ class DarkTheme extends BaseTheme {
         color: Colors.white,
         fontWeight: FontWeight.w500,
       ),
+      bodyLarge: GoogleFonts.inter(
+        fontSize: 20,
+        color: textColor,
+        fontWeight: FontWeight.bold,
+      ),
       bodySmall: GoogleFonts.inter(
         fontSize: 16,
         color: textColor,
@@ -63,7 +77,7 @@ class DarkTheme extends BaseTheme {
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         backgroundColor: primaryColor,
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
@@ -77,7 +91,11 @@ class DarkTheme extends BaseTheme {
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide(color: primaryColor),
+        borderSide: BorderSide(color: Colors.red),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(16),
+        borderSide: const BorderSide(color: Colors.red),
       ),
       prefixIconColor: Colors.white,
       suffixIconColor: Colors.white,
