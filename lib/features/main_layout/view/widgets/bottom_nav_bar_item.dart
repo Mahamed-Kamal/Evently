@@ -3,9 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBarItem extends StatefulWidget {
-  Function onChange;
+  final Function onChange;
 
-  BottomNavBarItem({super.key, required this.onChange});
+  const BottomNavBarItem({super.key, required this.onChange});
 
   @override
   State<BottomNavBarItem> createState() => _BottomNavBarItemState();
