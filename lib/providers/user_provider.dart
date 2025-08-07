@@ -1,8 +1,9 @@
-import 'package:evently/firebase/firebase_manager.dart';
-import 'package:evently/models/task_model.dart';
-import 'package:evently/models/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import '../core/firebase/firebase_manager.dart';
+import '../data/models/task_model.dart';
+import '../data/models/user_model.dart';
 
 class UserProvider extends ChangeNotifier {
   UserModel? userModel;
